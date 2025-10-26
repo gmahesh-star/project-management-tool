@@ -1,0 +1,139 @@
+PROJECT MANAGEMENT TOOL - FILE STRUCTURE
+========================================
+
+bespoke_assignment/
+│
+├── README.md                          # Main documentation
+├── PROJECT_SUMMARY.md                 # Assignment completion summary
+├── SETUP_INSTRUCTIONS.md              # Quick setup guide
+├── DEPLOYMENT_GUIDE.md                # Production deployment guide
+├── POSTMAN_COLLECTION.json            # API testing collection
+├── .gitignore                         # Git ignore rules
+│
+├── backend/                           # Python FastAPI Backend
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py                    # FastAPI application entry point
+│   │   ├── config.py                  # Configuration settings
+│   │   ├── database.py                # Database connection
+│   │   ├── models.py                  # SQLAlchemy database models
+│   │   ├── schemas.py                 # Pydantic validation schemas
+│   │   ├── auth.py                    # Authentication utilities
+│   │   │
+│   │   └── routers/                   # API route handlers
+│   │       ├── __init__.py
+│   │       ├── auth.py                # Auth endpoints (register, login)
+│   │       ├── users.py               # User management endpoints
+│   │       ├── projects.py            # Project CRUD endpoints
+│   │       ├── tasks.py               # Task management endpoints
+│   │       ├── ai.py                  # AI user story generation
+│   │       └── dashboard.py           # Analytics and statistics
+│   │
+│   ├── tests/                         # Unit tests
+│   │   ├── __init__.py
+│   │   └── test_auth.py               # Authentication tests
+│   │
+│   ├── requirements.txt               # Python dependencies
+│   ├── .env.example                   # Environment variables template
+│   └── .gitignore                     # Backend-specific ignores
+│
+├── frontend/                          # React Frontend
+│   ├── public/
+│   │   └── vite.svg
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── Layout.jsx             # Main application layout
+│   │   │
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx        # Authentication state management
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Login.jsx              # Login page
+│   │   │   ├── Register.jsx           # Registration page
+│   │   │   ├── Dashboard.jsx          # Main dashboard with analytics
+│   │   │   ├── Projects.jsx           # Projects list page
+│   │   │   ├── ProjectDetail.jsx      # Single project detail page
+│   │   │   ├── Tasks.jsx              # All tasks page
+│   │   │   ├── TaskDetail.jsx         # Single task detail page
+│   │   │   ├── MyTasks.jsx            # User's assigned tasks
+│   │   │   └── Users.jsx              # User management page
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js                 # API client and endpoints
+│   │   │
+│   │   ├── App.jsx                    # Root component with routing
+│   │   ├── main.jsx                   # Application entry point
+│   │   └── index.css                  # Global styles
+│   │
+│   ├── index.html                     # HTML template
+│   ├── package.json                   # Node dependencies
+│   ├── vite.config.js                 # Vite configuration
+│   ├── tailwind.config.js             # TailwindCSS configuration (vintage theme)
+│   ├── postcss.config.js              # PostCSS configuration
+│   ├── .env.example                   # Environment variables template
+│   └── .gitignore                     # Frontend-specific ignores
+│
+└── docs/                              # Additional documentation
+    ├── ER_Diagram.md                  # Database schema diagram
+    └── API_ENDPOINTS.md               # API endpoints reference
+
+========================================
+KEY FILES TO REVIEW
+========================================
+
+DOCUMENTATION:
+- README.md                    → Complete project documentation
+- PROJECT_SUMMARY.md           → Assignment completion overview
+- SETUP_INSTRUCTIONS.md        → Quick start guide
+- docs/ER_Diagram.md           → Database design
+
+BACKEND CORE:
+- backend/app/main.py          → FastAPI app initialization
+- backend/app/models.py        → Database models
+- backend/app/routers/         → All API endpoints
+
+FRONTEND CORE:
+- frontend/src/App.jsx         → React app with routing
+- frontend/src/pages/          → All UI pages
+- frontend/tailwind.config.js  → Custom vintage theme
+
+CONFIGURATION:
+- backend/.env.example         → Backend environment setup
+- frontend/.env.example        → Frontend environment setup
+- backend/requirements.txt     → Python dependencies
+- frontend/package.json        → Node dependencies
+
+========================================
+TOTAL FILE COUNT
+========================================
+
+Backend Files:     15+
+Frontend Files:    20+
+Documentation:     8
+Configuration:     7
+Total:            50+ files
+
+========================================
+TECHNOLOGIES USED
+========================================
+
+Backend:
+- Python 3.10+
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
+- JWT Authentication
+- GROQ API
+- Pytest
+
+Frontend:
+- React 18
+- Vite
+- TailwindCSS (Custom Vintage Theme)
+- Axios
+- React Router
+- Lucide Icons
+- Recharts
+
+========================================
