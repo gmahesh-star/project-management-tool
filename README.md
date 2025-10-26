@@ -705,14 +705,7 @@ vercel --prod
 
 ---
 
-## 📞 Support & Contact
 
-For any questions or issues:
-- **Developer**: [Your Name]
-- **Email**: [Your Email]
-- **GitHub**: [Your GitHub Profile]
-
----
 
 ## 📄 License
 
