@@ -3,8 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
 from .routers import auth, users, projects, tasks, ai, dashboard
 
-# Create database tables
-Base.metadata.create_all(bind=engine)
+# Note: Database tables should be created using Alembic migrations
+# Not automatically on startup in serverless environments
+# Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Project Management Tool API",
