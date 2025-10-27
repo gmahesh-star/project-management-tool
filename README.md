@@ -2,6 +2,12 @@
 
 A comprehensive full-stack project management system with AI-powered user story generation, built with FastAPI (Python) backend and React frontend.
 
+## 🌐 Live Demo
+
+- **Frontend**: https://project-management-tool-yl94.vercel.app
+- **Backend API**: https://project-management-tool-xi-flame.vercel.app
+- **API Documentation**: https://project-management-tool-xi-flame.vercel.app/docs
+
 ## 👤 Developer Information
 
 **Full Name:** G Mahesh
@@ -273,8 +279,15 @@ The frontend will be available at `http://localhost:3000`
 ## 📚 API Documentation
 
 ### Base URL
+
+**Local Development:**
 ```
 http://localhost:8000
+```
+
+**Production:**
+```
+https://project-management-tool-xi-flame.vercel.app
 ```
 
 ### Authentication Endpoints
@@ -453,8 +466,14 @@ Authorization: Bearer {token}
 ```
 
 For complete API documentation with interactive testing, visit:
+
+**Local Development:**
 - **Swagger UI**: `http://localhost:8000/docs`
 - **ReDoc**: `http://localhost:8000/redoc`
+
+**Production:**
+- **Swagger UI**: `https://project-management-tool-xi-flame.vercel.app/docs`
+- **ReDoc**: `https://project-management-tool-xi-flame.vercel.app/redoc`
 
 ---
 
@@ -594,43 +613,45 @@ pytest --cov=app tests/
 
 ## 🚀 Deployment
 
-### Backend Deployment (Railway/Render/Heroku)
+### Current Deployment
 
-1. **Prepare for deployment**
-```bash
-# Add Procfile for Heroku
-echo "web: uvicorn app.main:app --host 0.0.0.0 --port \$PORT" > Procfile
-```
+This project is currently deployed on **Vercel**:
 
-2. **Set environment variables** on your hosting platform:
-   - `DATABASE_URL`
-   - `SECRET_KEY`
-   - `GROQ_API_KEY`
+- **Frontend**: https://project-management-tool-yl94.vercel.app
+- **Backend**: https://project-management-tool-xi-flame.vercel.app
+- **Database**: Neon PostgreSQL (Serverless)
 
-3. **Deploy using Git**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git push heroku main
-```
+### Backend Deployment (Vercel)
 
-### Frontend Deployment (Vercel/Netlify)
+1. **Connect GitHub repository** to Vercel
+2. **Configure backend project**:
+   - Framework Preset: Other
+   - Root Directory: `backend`
+   - Environment Variables:
+     - `DATABASE_URL` = Your Neon PostgreSQL connection string
+     - `SECRET_KEY` = Your secret key
+     - `GROQ_API_KEY` = Your GROQ API key
+     - `ALGORITHM` = HS256
+3. **Deploy**
 
-1. **Build the frontend**
-```bash
-cd frontend
-npm run build
-```
+### Frontend Deployment (Vercel)
 
-2. **Deploy to Vercel**
-```bash
-npm install -g vercel
-vercel --prod
-```
+1. **Connect same GitHub repository** to Vercel
+2. **Configure frontend project**:
+   - Framework Preset: Vite
+   - Root Directory: `frontend`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Environment Variables:
+     - `VITE_API_URL` = Your backend URL
+3. **Deploy**
 
-3. **Configure environment variables** on Vercel:
-   - `VITE_API_URL` = Your backend URL
+### Database Setup (Neon)
+
+1. Create account at https://neon.tech
+2. Create new project
+3. Copy connection string
+4. Run `python init_db.py` to create tables
 
 ### Deployment Checklist
 - ✅ Set all environment variables
